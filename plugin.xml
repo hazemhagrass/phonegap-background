@@ -10,7 +10,7 @@
     <keywords>cordova,BackgroundJS</keywords>
 
 
-    <js-module src="www/BackgroundJS.js" name="ContactPicker">
+    <js-module src="www/BackgroundJS.js" name="BackgroundJS">
         <clobbers target="navigator.BackgroundJS" />
     </js-module>
 
