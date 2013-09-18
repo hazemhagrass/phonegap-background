@@ -1,28 +1,38 @@
+/**
+ * @constructor
+ */
+var BackgroundJS = function(){};
 
-var BackgroundJS = {
+// Plug in to Cordova
+cordova.addConstructor(function() {
 
-    PluginName: "BackgroundJS",
+    if (!window.Cordova) {
+        window.Cordova = cordova;
+    };
 
-    PInvoke: function(method, data, callbackOK, callbackError){
-        if(data == null || data === undefined){ // `false` and `0` are valid values!
+
+    if(!window.plugins) window.plugins = {};
+    window.plugins.BackgroundJS = new BackgroundJS();
+});
+
+BackgroundJS.prototype.PInvoke = function(method, data, callbackOK, callbackError){
+    if(data == null || data === undefined){ // `false` and `0` are valid values!
             data = [];
         }
         else if(!Array.isArray(data)){
             data = [data];
         }
         cordova.exec(callbackOK, callbackError, this.PluginName, method, data);
-    },
+};
 
-    SetBackgroundSeconds: function(seconds, callbackOK, callbackError){
-        this.PInvoke("setBackgroundSeconds", seconds, callbackOK, callbackError);
-    },
+BackgroundJS.prototype.SetBackgroundSeconds = function(method, data, callbackOK, callbackError){
+    BackgroundJS.PInvoke("setBackgroundSeconds", seconds, callbackOK, callbackError);
+};
 
-    LockBackgroundTime: function(callbackOK, callbackError){
-        this.PInvoke("lockBackgroundTime", null, callbackOK, callbackError);
-    },
+BackgroundJS.prototype.LockBackgroundTime = function(callbackOK, callbackError){
+    BackgroundJS.PInvoke("lockBackgroundTime", null, callbackOK, callbackError);
+};
 
-    UnlockBackgroundTime: function(callbackOK, callbackError){
-        this.PInvoke("unlockBackgroundTime", null, callbackOK, callbackError);
-    }
-    
-}
+BackgroundJS.prototype.UnlockBackgroundTime = function(callbackOK, callbackError){
+    BackgroundJS.PInvoke("unlockBackgroundTime", null, callbackOK, callbackError);
+};
