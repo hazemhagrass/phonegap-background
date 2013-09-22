@@ -14,7 +14,7 @@
 
 - (void)dealloc
 {
-    [super dealloc];
+    //[super dealloc];
 }
 
 - (void)pluginInitialize
