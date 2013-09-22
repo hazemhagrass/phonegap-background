@@ -1,11 +1,28 @@
-/**
- * @constructor
- */
-var BackgroundJS = function(){};
+ var BackgroundJS = function(){};
 
-// Plug in to Cordova
+ BackgroundJS.prototype.PInvoke = function(method, data, callbackOK, callbackError){
+   if(data == null || data === undefined) 
+       data = [];
+   else if(!Array.isArray(data))
+       data = [data];
+
+   cordova.exec(callbackOK, callbackError, 'BackgroundJS', method, data);
+};
+
+BackgroundJS.prototype.SetBackgroundSeconds = function(seconds, callbackOK, callbackError){
+    window.plugins.BackgroundJS.PInvoke("setBackgroundSeconds", seconds, callbackOK, callbackError);
+};
+
+BackgroundJS.prototype.LockBackgroundTime = function(callbackOK, callbackError){
+    window.plugins.BackgroundJS.PInvoke("lockBackgroundTime", null, callbackOK, callbackError);
+};
+
+BackgroundJS.prototype.UnlockBackgroundTime = function(callbackOK, callbackError){
+   window.plugins.BackgroundJS.PInvoke("unlockBackgroundTime", null, callbackOK, callbackError);
+};
+
 cordova.addConstructor(function() {
-
+    console.log('constractor');
     if (!window.Cordova) {
         window.Cordova = cordova;
     };
@@ -14,25 +31,3 @@ cordova.addConstructor(function() {
     if(!window.plugins) window.plugins = {};
     window.plugins.BackgroundJS = new BackgroundJS();
 });
-
-BackgroundJS.prototype.PInvoke = function(method, data, callbackOK, callbackError){
-    if(data == null || data === undefined){ // `false` and `0` are valid values!
-            data = [];
-        }
-        else if(!Array.isArray(data)){
-            data = [data];
-        }
-        cordova.exec(callbackOK, callbackError, this.PluginName, method, data);
-};
-
-BackgroundJS.prototype.SetBackgroundSeconds = function(method, data, callbackOK, callbackError){
-    BackgroundJS.PInvoke("setBackgroundSeconds", seconds, callbackOK, callbackError);
-};
-
-BackgroundJS.prototype.LockBackgroundTime = function(callbackOK, callbackError){
-    BackgroundJS.PInvoke("lockBackgroundTime", null, callbackOK, callbackError);
-};
-
-BackgroundJS.prototype.UnlockBackgroundTime = function(callbackOK, callbackError){
-    BackgroundJS.PInvoke("unlockBackgroundTime", null, callbackOK, callbackError);
-};
