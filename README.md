@@ -1,8 +1,6 @@
 # BackgroundJS plugin for Cordova / PhoneGap
 
-This Plugin is inspired from phonegap-backgroundjs plugin
-
-[here](https://github.com/jocull/phonegap-backgroundjs)
+This Plugin is inspired from [phonegap-backgroundjs](https://github.com/jocull/phonegap-backgroundjs) plugin
 
 Now you can background JavaScript operations on iOS with PhoneGap!
 
@@ -10,23 +8,23 @@ Now you can background JavaScript operations on iOS with PhoneGap!
 
 Example Usage: 
 
-1. **Run in the background indefinitely:**
+  1. **Run in the background indefinitely:**
 
-```js
-window.plugins.BackgroundJS.LockBackgroundTime(function(){}, function(msg){alert(msg);});
-```
+       ```js:
+        window.plugins.BackgroundJS.LockBackgroundTime(function(){}, function(msg){alert(msg);});
+       ```
 
-2. **Get a block of seconds:**
+  2. **Get a block of seconds:**
 
-```js
-window.plugins.BackgroundJS.SetBackgroundSeconds(10);
-```
+       ```js:
+        window.plugins.BackgroundJS.SetBackgroundSeconds(10);
+       ```
 
-3. **Stop running background tasks immediately:**
+  3. **Stop running background tasks immediately:**
 
-```js
-window.plugins.BackgroundJS.UnlockBackgroundTime();
-```
+       ```js:
+        window.plugins.BackgroundJS.UnlockBackgroundTime();
+       ```
 
 ## Installation for Cordova 3.0.0
 
