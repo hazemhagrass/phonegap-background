@@ -8,7 +8,7 @@ Now you can background JavaScript operations on iOS with PhoneGap!
 
 Example Usage: 
 
-1. **Run in the background indefinitely:**
+1. **Run in the background infinitely:**
 
 ```js
 var timerCount = 0;
@@ -18,10 +18,11 @@ $('body').html(timerCount++);
 },1000);
 ```
 
-2. **Get a block of seconds:**
+2. **Run in the background for specific amount of time(seconds):**
 
 ```js
-window.plugins.BackgroundJS.SetBackgroundSeconds(10, function(){}, function(msg){console.log(msg);});
+var seconds = 10;
+window.plugins.BackgroundJS.SetBackgroundSeconds(seconds, function(){}, function(msg){console.log(msg);});
 ```
 
 3. **Stop running background tasks immediately:**
