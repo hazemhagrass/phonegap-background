@@ -8,7 +8,7 @@
     <description>Cordova BackgroundJS Plugin</description>
     <license>Apache 2.0</license>
     <keywords>cordova,BackgroundJS</keywords>
-
+    <dependency id="org.apache.cordova.device" url="https://github.com/apache/cordova-plugin-device.git" />
 
     <js-module src="www/BackgroundJS.js" name="BackgroundJS">
         <clobbers target="navigator.BackgroundJS" />

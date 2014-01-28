@@ -6,6 +6,7 @@
    else if(!Array.isArray(data))
        data = [data];
 
+  if (device.platform == "iOS")
    cordova.exec(callbackOK, callbackError, 'BackgroundJS', method, data);
 };
 
