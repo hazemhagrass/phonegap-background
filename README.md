@@ -1,4 +1,4 @@
-# BackgroundJS plugin for Cordova / PhoneGap
+#  phonegap-background plugin for Cordova / PhoneGap
 
 This Plugin is inspired from [phonegap-backgroundjs](https://github.com/jocull/phonegap-backgroundjs) plugin
 
