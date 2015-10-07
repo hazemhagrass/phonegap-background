@@ -2,8 +2,8 @@
 
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="com.badrit.BackgroundJS"
-    version="0.1.0">
+    id="com-badrit-backgroundjs"
+    version="0.2.0">
     <name>BackgroundJS</name>
     <description>Cordova BackgroundJS Plugin</description>
     <license>Apache 2.0</license>

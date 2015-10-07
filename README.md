@@ -31,9 +31,17 @@ window.plugins.BackgroundJS.SetBackgroundSeconds(seconds, function(){}, function
 window.plugins.BackgroundJS.UnlockBackgroundTime(function(){}, function(msg){console.log(msg);});
 ```
 
-## Installation for Cordova 3.0.0
+## Installation 
 
-phonegap local plugin add https://github.com/hazemhagrass/BackgroundJS
+for Cordova >= 3.0.0
+
+phonegap local plugin add https://github.com/hazemhagrass/phonegap-background.git
+
+cordova plugin add https://github.com/hazemhagrass/phonegap-background.git
+
+for Cordova >= 5.0.0
+
+cordova plugin add com-badrit-backgroundjs
 
 
 This has been successfully tested on Cordova 3.0 to 3.1.

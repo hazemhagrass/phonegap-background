@@ -1,0 +1,23 @@
+{
+  "name": "com-badrit-backgroundjs",
+  "version": "0.2.0",
+  "description": "Cordova BackgroundJS Plugin",
+  "cordova": {
+    "id": "com-badrit-backgroundjs",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hazemhagrass/phonegap-background"
+  },
+  "keywords": [
+    "cordova",
+    "backgroundjs",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "MIT"
+}
