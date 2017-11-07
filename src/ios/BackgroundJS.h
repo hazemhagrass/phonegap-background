@@ -17,5 +17,6 @@
 - (void)setBackgroundSeconds:(CDVInvokedUrlCommand*)command;
 - (void)lockBackgroundTime:(CDVInvokedUrlCommand*)command;
 - (void)unlockBackgroundTime:(CDVInvokedUrlCommand*)command;
+- (void)isBackgroundThreadRunning:(CDVInvokedUrlCommand*)command;
 
 @end
