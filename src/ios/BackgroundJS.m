@@ -89,4 +89,12 @@
     [self setBackgroundSecondsWithSeconds:[NSNumber numberWithInteger:backgroundSecondsCounter]];
 }
 
+- (void)isBackgroundThreadRunning:(CDVInvokedUrlCommand *)command
+{
+	bool threadRunning = backgroundSecondsCounter > 0;
+
+	CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:threadRunning];
+	[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
 @end
